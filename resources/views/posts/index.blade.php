@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', 'Posts')
+@section('title', $title)
 
 @section('content')
-    <section class="hero-wrap hero-wrap-2" style="background: center 75% / cover no-repeat url('images/posts-index-header.jpg');">
+    <section class="hero-wrap hero-wrap-2" style="background: center 75% / cover no-repeat url('/images/posts-index-header.jpg');">
         <div class="overlay"></div>
         <div class="container">
             <div class="row no-gutters slider-text align-items-end justify-content-center">
                 <div class="col-md-9 ftco-animate pb-5 text-center">
                     <h1 class="mb-3 bread">The Garage &amp; Gate Blog</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>Blog <i class="ion-ios-arrow-forward"></i></span></p>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span> <span>{{ $title }} <i class="ion-ios-arrow-forward"></i></span></p>
                 </div>
             </div>
         </div>
@@ -75,8 +75,8 @@
                         </div>
                         <div class="sidebar-box categories text-center ftco-animate px-4 pb-4">
                             <h2 class="heading mb-4">Popular Tags</h2>
-                            @foreach ($popularTags as $tag)
-                                <a href="#" class="btn btn-outline-secondary btn-sm mb-1">{{ substr($tag->name, 0, 23) }}</a>
+                            @foreach ($popularTags->slice(0, 10) as $tag)
+                                <a href="{{ $tag->path() }}" class="btn btn-outline-secondary btn-sm mb-1">{{ substr($tag->name, 0, 23) }}</a>
                             @endforeach
                         </div>
                     </div>

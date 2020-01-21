@@ -18,10 +18,13 @@ class CreatePostsTable extends Migration
             $table->string('slug')->unique();
             $table->string('title');
             $table->text('body');
-            $table->string('author')->nullable();
+            $table->string('author');
+            $table->string('source_url');
             $table->timestamp('publication_date')->nullable();
             $table->string('featured_img_path')->nullable();
             $table->timestamps();
+
+            $table->foreign('author')->references('name')->on('authors')->onDelete('cascade');
         });
     }
 

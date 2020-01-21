@@ -30,13 +30,13 @@ class AppServiceProvider extends ServiceProvider
         View::composer('*', function($view) {
             $popularTags = Tag::join('post_tag', 'post_tag.tag_id', '=', 'tags.id')
                 ->groupBy('tags.id')
-                ->get(['tags.id', 'tags.name', DB::raw('count(tags.id) as tag_count')])
+                ->get(['tags.id', 'tags.name', 'tags.slug', DB::raw('count(tags.id) as tag_count')])
                 ->sortByDesc('tag_count');
 
             $view->with('popularTags', $popularTags);
         });
 
-        View::composer('posts.show', function($view) {
+        View::composer('*', function($view) {
             $latestPosts = Post::latest('publication_date')->where('featured_img_path', '!=', '')->whereNotNull('featured_img_path')->take(3)->get();
 
             $view->with('latestPosts', $latestPosts);

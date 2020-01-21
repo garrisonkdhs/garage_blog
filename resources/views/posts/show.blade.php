@@ -12,7 +12,7 @@
                     <p class="breadcrumbs">
                         <span class="mr-2"><a href="/">Home <i class="ion-ios-arrow-forward"></i></a></span>
                         <span class="mr-2"><a href="/posts">Blog <i class="ion-ios-arrow-forward"></i></a></span>
-                        <span>{{ $post->title }}<i class="ion-ios-arrow-forward"></i></span>
+                        <span>{{ $post->title }}</span>
                     </p>
                 </div>
             </div>
@@ -25,11 +25,35 @@
 
                 <div class="col-lg-8 order-lg-last ftco-animate">
                     {!! $post->body !!}
+
+                    <div class="mt-5">
+                        <span class="font-weight-bold">Source:</span> <a href="{{ $post->source_url }}" target="_blank">{{ $post->source_url }}</a>
+                    </div>
+
                     <div class="tag-widget post-tag-container mb-5 mt-5">
                         <div class="tagcloud">
                             @foreach($post->tags as $tag)
-                                <a href="#" class="tag-cloud-link">{{ $tag->name }}</a>
+                                <a href="{{ $tag->path() }}" class="tag-cloud-link">{{ $tag->name }}</a>
                             @endforeach
+                        </div>
+                    </div>
+
+                    <div class="about-author d-md-flex p-4 bg-light">
+                        <div class="bio mr-5">
+                            <a href="{{ $post->authorInfo->path() }}" class=" mb-3 bg-white rounded-circle d-flex align-items-center justify-content-center" style="width: 150px; height: 150px;">
+                                <img src="{{ $post->authorInfo->logo_img_path }}" alt="{{ $post->author }}" class="w-75">
+                            </a>
+                        </div>
+                        <div class="desc">
+                            <h3>
+                                <a href="{{ $post->authorInfo->path() }}" class="text-dark">{{ $post->author }}</a>
+                            </h3>
+                            <p>
+                                <a class="text-secondary" href="{{ $post->authorInfo->path() }}">
+                                    {{ substr(strip_tags($post->authorInfo->about), 0, 150) . '...' }}
+                                </a>
+                            </p>
+                            <a href="{{ $post->authorInfo->website }}" target="_blank">{{ $post->authorInfo->website }}</a>
                         </div>
                     </div>
                 </div> <!-- .col-md-8 -->
@@ -53,7 +77,7 @@
                                     <h3><a href="{{ $latestPost->path() }}">{{ $latestPost->title }}</a></h3>
                                     <div class="meta">
                                         <div><a href="{{ $latestPost->path() }}"><span class="icon-calendar"></span> {{ $latestPost->publication_date->format('M d, Y') }}</a></div>
-                                        <div><a href="#"><span class="icon-tag"></span> {{ $latestPost->tags[0]->name }}</a></div>
+                                        <div><a href="{{ $latestPost->tags[0]->path() }}"><span class="icon-tag"></span> {{ $latestPost->tags[0]->name }}</a></div>
                                     </div>
                                 </div>
                             </div>
@@ -64,8 +88,8 @@
                     <div class="sidebar-box ftco-animate">
                         <h3 class="heading mb-4">Tag Cloud</h3>
                         <div class="tagcloud">
-                            @foreach($popularTags as $tag)
-                                <a href="#" class="tag-cloud-link">{{ $tag->name }}</a>
+                            @foreach($popularTags->slice(0, 10) as $tag)
+                                <a href="{{ $tag->path() }}" class="tag-cloud-link">{{ $tag->name }}</a>
                             @endforeach
                         </div>
                     </div>

@@ -37,6 +37,7 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
                     <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="/authors" class="nav-link">Authors</a></li>
                     <li class="nav-item"><a href="/posts" class="nav-link">Blog</a></li>
                     <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
                 </ul>
@@ -61,13 +62,11 @@
                             <div class="col-md-8">
                                 <form action="#" method="post" class="subscribe-form" id="footer-subscription-form">
                                     @csrf
-                                    <div class="form-group d-flex">
-                                        <input type="text" name="email" class="form-control" placeholder="Enter email address">
+                                    <div class="form-group d-sm-flex">
+                                        <input type="email" name="email" class="form-control" placeholder="Enter email address">
                                         <input type="submit" value="Subscribe" class="submit px-3">
                                     </div>
                                 </form>
-                                <div class="subscription-success alert alert-success mt-2" style="display:none"><span>Thank you for subscribing!</span></div>
-                                <div class="subscription-failure alert alert-danger mt-2" style="display:none"><span class="error-message"></span></div>
                             </div>
                         </div>
                     </div>
@@ -96,8 +95,9 @@
                         <ul class="list-unstyled">
                             <li><a href="/" class="py-2 d-block">Home</a></li>
                             <li><a href="/about" class="py-2 d-block">About</a></li>
-                            <li><a href="/posts" class="py-2 d-block">Blog</a></li>
                             <li><a href="/contact" class="py-2 d-block">Contact</a></li>
+                            <li><a href="/privacy-policy" class="py-2 d-block">Privacy Policy</a></li>
+                            <li><a href="/terms-and-conditions" class="py-2 d-block">Terms and Conditions</a></li>
                         </ul>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                         <h2 class="ftco-heading-2">Popular Tags</h2>
                         <ul class="list-unstyled">
                             @foreach ($popularTags->slice(0, 5) as $tag)
-                                <li><a href="#" class="py-2 d-block">{{ $tag->name }}</a></li>
+                                <li><a href="{{ $tag->path() }}" class="py-2 d-block">{{ $tag->name }}</a></li>
                             @endforeach
                         </ul>
                     </div>
@@ -118,7 +118,7 @@
                             <ul>
                                 <li><span class="icon icon-map-marker"></span><span class="text">123 Address St. <br>Los Angeles, CA, 90034</span></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">(000) 000-0000</span></a></li>
-                                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                                <li><a href="mailto:garageblogger@gmail.com"><span class="icon icon-envelope"></span><span class="text">garageblogger@gmail.com</span></a></li>
                             </ul>
                         </div>
                     </div>

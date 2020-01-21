@@ -106,7 +106,7 @@
                         <div class="px-4 pb-4">
                             <h6 class="mb-4">Popular Tags:</h6>
                             @foreach ($popularTags->slice(0, 5) as $tag)
-                                <a href="#" class="btn btn-outline-secondary btn-sm mb-1">{{ $tag->name }}</a>
+                                <a href="{{ $tag->path() }}" class="btn btn-outline-secondary btn-sm mb-1">{{ $tag->name }}</a>
                             @endforeach
                         </div>
                     </div>

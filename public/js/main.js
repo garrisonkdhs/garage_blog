@@ -281,12 +281,16 @@
           data: formData,
           dataType: 'json',
           success: function (data) {
-              $('.subscription-success').fadeIn(400).delay(4000).fadeOut(400);
+              let successMessage = $('<div class="mt-2 alert alert-success"><span>Thank you for subscribing!</span></div>')
+                  .hide().fadeIn(400).delay(4000).fadeOut(400);
+              $('#footer-subscription-form').append(successMessage);
               $('#footer-subscription-form input.form-control').val('');
           },
           error: function (data) {
               let errorMsg = JSON.parse(data.responseText);
-              $('.subscription-failure .error-message').text(errorMsg.message).parent().fadeIn(400).delay(4000).fadeOut(400);
+              let errorMessage = $('<div class="mt-2 alert alert-danger"><span>' + errorMsg.message + '</span></div>')
+                  .hide().fadeIn(400).delay(4000).fadeOut(400);
+              $('#footer-subscription-form').append(errorMessage);
           }
       });
 
@@ -294,6 +298,31 @@
   }).keydown(function () {
       $('.subscription-success').hide();
       $('.subscription-failure').hide();
+  });
+
+  $('#contact-form').on('submit', function(event) {
+      let formData = $('#contact-form').serialize();
+
+      $.ajax({
+          url: '/contact/submit',
+          type: 'post',
+          data: formData,
+          success: function (data) {
+              let successMessage = $('<div class="mt-2 alert alert-success"><span>Your message has been sent.<br>We will try to respond to you within 24 hrs.</span></div>')
+                  .hide().fadeIn(400).delay(4000).fadeOut(400);
+              $('#contact-form').append(successMessage);
+              $('#contact-form input').each(function() { $(this).val(''); });
+              $('#contact-form textarea').each(function() { $(this).val(''); });
+          },
+          error: function (data) {
+              let errorMsg = JSON.parse(data.responseText);
+              let errorMessage = $('<div class="mt-2 alert alert-danger"><span>' + errorMsg.message + '</span></div>')
+                  .hide().fadeIn(400).delay(4000).fadeOut(400);
+              $('#contact-form').append(errorMessage);
+          }
+      });
+
+      event.preventDefault();
   });
 
 
