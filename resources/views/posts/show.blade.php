@@ -24,11 +24,22 @@
             <div class="row">
 
                 <div class="col-lg-8 order-lg-last ftco-animate">
-                    {!! $post->body !!}
+                    @if($post->authorInfo->permission)
+                        {!! $post->body !!}
 
-                    <div class="mt-5">
-                        <span class="font-weight-bold">Source:</span> <a href="{{ $post->source_url }}" target="_blank">{{ $post->source_url }}</a>
-                    </div>
+                        <div class="mt-5">
+                            <span class="font-weight-bold">Reposted with permission from:</span> <a href="{{ $post->source_url }}" target="_blank">{{ $post->source_url }}</a>
+                        </div>
+                    @else
+                        <blockquote cite="{{ $post->source_url }}">
+                            {!! substr($post->body, 0, 600) . '...' !!}
+                            <footer>- {{ $post->author }}, <cite>{{ $post->authorInfo->website }}</cite></footer>
+                        </blockquote>
+
+                        <div class="my-5 text-center">
+                            <a class="btn btn-primary px-3 px-md-4 py-3" href="{{ $post->source_url }}" target="_blank">Read Full Post</a>
+                        </div>
+                    @endif
 
                     <div class="tag-widget post-tag-container mb-5 mt-5">
                         <div class="tagcloud">

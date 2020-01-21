@@ -12107,9 +12107,9 @@ h5,
 }
 
 .btn.btn-primary:hover {
-  border: 1px solid #fd5f00;
-  background: transparent;
-  color: #fd5f00;
+  border: 1px solid #000000 !important;
+  background: #000000 !important;
+  color: #fff !important;
 }
 
 .btn.btn-primary.btn-outline-primary {

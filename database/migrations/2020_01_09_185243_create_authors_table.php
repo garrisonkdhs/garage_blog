@@ -20,6 +20,7 @@ class CreateAuthorsTable extends Migration
             $table->string('website');
             $table->string('logo_img_path');
             $table->text('about');
+            $table->boolean('permission')->default(false);
             $table->timestamps();
         });
     }
