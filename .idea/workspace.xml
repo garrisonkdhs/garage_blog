@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4c2a8d21-9812-48ef-aa1c-c585b8f3a0db" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_01_09_185243_create_authors_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_01_09_185243_create_authors_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/posts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/posts/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +128,12 @@
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/js" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
@@ -180,7 +183,8 @@
       <workItem from="1579110246228" duration="21723000" />
       <workItem from="1579283221337" duration="16590000" />
       <workItem from="1579540308364" duration="17187000" />
-      <workItem from="1579624818815" duration="10669000" />
+      <workItem from="1579624818815" duration="19803000" />
+      <workItem from="1579711609908" duration="1919000" />
     </task>
     <servers />
   </component>
@@ -191,10 +195,18 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="2475" y="201" width="800" height="684" key="#Deployment" timestamp="1579645880048">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2475" y="201" width="800" height="684" key="#Deployment/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579645880048" />
     <state x="2475" y="201" width="800" height="684" key="#Images" timestamp="1579541322664">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2475" y="201" width="800" height="684" key="#Images/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579541322664" />
+    <state x="2586" y="332" width="578" height="423" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1579652527193">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2586" y="332" width="578" height="423" key="#com.intellij.fileTypes.FileTypeChooser/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579652527193" />
     <state x="2613" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579303794784">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -207,10 +219,14 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2609" y="270" width="540" height="540" key="StructurePopup/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579024749172" />
-    <state x="2534" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1579624819264">
+    <state x="2728" y="437" width="294" height="213" key="WebDeployment.AddServerDialog.v.1" timestamp="1579645677501">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2534" y="367" key="com.intellij.ide.util.TipDialog/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579624819264" />
+    <state x="2728" y="437" width="294" height="213" key="WebDeployment.AddServerDialog.v.1/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579645677501" />
+    <state x="2534" y="367" key="com.intellij.ide.util.TipDialog" timestamp="1579711613591">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2534" y="367" key="com.intellij.ide.util.TipDialog/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579711613591" />
     <state x="2020" y="100" width="1720" height="880" key="dock-window-1" timestamp="1579114530114">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
@@ -219,13 +235,17 @@
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2436" y="221" width="887" height="638" key="find.popup/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579642698733" />
+    <state x="2777" y="196" width="394" height="702" key="ftp.server.browser" timestamp="1579645847987">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="2777" y="196" width="394" height="702" key="ftp.server.browser/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579645847987" />
     <state x="2544" y="245" key="run.anything.popup" timestamp="1579116982377">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state x="2544" y="245" key="run.anything.popup/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579116982377" />
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1579642859884">
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1579649562563">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579642859884" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1579649562563" />
   </component>
 </project>
